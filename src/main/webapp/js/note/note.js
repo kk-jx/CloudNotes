@@ -144,26 +144,32 @@ function deleteNote(noteId){
 $(function(){
     $(document).on('click',"#note_1,#note_2,#note_3,#note_4,#note_5,#note_6,#note_7,#note_8,#note_9",function(){
         var noteId = $(this).find("p:eq(0)").html();
-        $('#right_page1,#right_page3,#right_page4').hide();
+        $('#right_page1,#right_page3,#right_page4,#right_page5').hide();
         $('#right_page2').show();
         getNoteContent(noteId);
     });
 
     $(document).on('click',"#my_note", function () {
         $('#right_page1').show();
-        $('#right_page2,#right_page3,#right_page4').hide();
+        $('#right_page2,#right_page3,#right_page4,#right_page5').hide();
         getNotesList();
     });
 
     $(document).on('click',"#My_notes", function () {
         $('#right_page1').show();
-        $('#right_page2,#right_page3,#right_page4').hide();
+        $('#right_page2,#right_page3,#right_page4,#right_page5').hide();
         getNotesList();
     });
 
     $(document).on('click',"#create_note", function () {
         $('#right_page3').show();
-        $('#right_page2,#right_page1,#right_page4').hide();
+        $('#right_page2,#right_page1,#right_page4,#right_page5').hide();
+    });
+
+
+    $(Document).on('click',"#my_load", function () {
+        $('#right_page5').show();
+        $('#right_page2,#right_page1,#right_page4,#right_page3').hide();
     });
 
     $(Document).on('click',"#add_note", function () {
@@ -175,7 +181,7 @@ $(function(){
         var noteTitle = $('#note_title').html();
         var noteContent = $('#note_content').html();
         $('#right_page4').show();
-        $('#right_page2,#right_page1,#right_page3').hide();
+        $('#right_page2,#right_page1,#right_page3,#right_page5').hide();
         $('#note_editor_id').val(noteId);
         $('#note_editor_title').val(noteTitle);
         CKEDITOR.instances.note_editor_content.setData(noteContent);

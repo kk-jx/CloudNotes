@@ -55,7 +55,7 @@
         <div class="col-sm-9 sidebar" >
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="#" id="my_note">我的日记</a></li>
-                <li><a href="#">我的文件</a></li>
+                <li><a href="#" id="my_load">我的文件</a></li>
                 <li><a href="#">我的信息</a></li>
             </ul>
         </div>
@@ -228,6 +228,29 @@
             </div>
         </aside>
     </div>
+
+    <!--上传文件-->
+    <div class="col-sm-10" style='display:none;' id="right_page5">
+        <div class="row">
+            <div class="col-xs-9">
+                <h3>我的文件</h3>
+            </div>
+            <div class="col-xs-2"  style="padding: 10px;">
+                <button class="btn btn-primary btn-sm btn-block" id="create_upload">上传文档</button>
+
+
+                <form method="post" action="/form" enctype="multipart/form-data">
+                    <input type="text" name="user">
+                    <input type="text" name="uploadname"/>
+                    <input type="file" name="file"/>
+                    <input type="submit"/>
+               </form>
+
+            </div>
+        </div>
+    </div>
+
+
 
 </div>
 </div>
